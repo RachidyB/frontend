@@ -5,6 +5,7 @@ import Home from './Home'
 import Navbar from './Navbar';
 import Register from './Register.js';
 import Login from './Login';
+import Contact from './Contact';
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,8 @@ function App() {
     <Routes> 
       <Route  path="/Home" element={<Home />} />
       <Route  path="/Register" element={<Register />} />
+      <Route  path="/Contact" element={<Contact />} />
+
     </Routes>
 </Router>
 

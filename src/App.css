@@ -962,4 +962,97 @@ section
   background: transparent;
 }
 
+.CONTACTER
+{
+background-size: contain;
+position: relative;
+z-index: 1; /*pour sombrer l'arriere plan*/
+width: 80vh;
+height: 42vh;
+padding: 10px;
+float: left;
+margin-left: 500px;
+display: flex;
+
+
+
+
+}
+.CONTACTER::after
+{
+content: '';
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+background-color: black;
+opacity: .8;
+z-index: -1;
+}
+#CONTACTER .CONTACTER h1
+{
+font-family: 'Libre Baskerville', cursive;
+text-align: center;
+color: #2196f3;/* Light blue*/
+float: left;
+margin-left: 40%;
+font-size: 30px;
+}
+#CONTACTER .CONTACTER p
+{
+display: flex;
+flex-direction: column;
+align-items: center;
+color: #FFF;
+padding: 10px;
+float: inherit;
+font-size: 20px;
+}
+#CONTACTER .CONTACTER .TitreCONTACT
+{
+float: inherit;
+text-align: center;
+}
+
+
+
+
+
+
+
+.CONTACTER::after
+{
+content: '';
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+background-color: black;
+}
+#CONTACTER .CONTACTER h1
+{
+font-family: 'Libre Baskerville', cursive;
+text-align: center;
+color: #2196f3;/* Light blue*/
+float: left;
+margin-left: 40%;
+font-size: 30px;
+}
+#CONTACTER .CONTACTER p
+{
+display: flex;
+flex-direction: column;
+align-items: center;
+color: #FFF;
+padding: 10px;
+float: inherit;
+font-size: 20px;
+}
+#CONTACTER .CONTACTER .TitreCONTACT
+{
+float: inherit;
+text-align: center;
+}
 
