@@ -1,38 +1,965 @@
-.App {
-  text-align: center;
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+	font-size: 18px;
+	font-family: "Roboto Cn", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a{
+	text-decoration: none;
+	
+	
+
+}
+
+header{
+	background: linear-gradient(to bottom, rgba(231, 44, 44, 0), rgba(241, 17, 17, 0)),url('backGround4.jpg');
+	width: 100%;
+	position: relative;
+  overflow: hidden;
+}
+
+.container{
+	max-width: 120rem;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.menu-toggle{
+	position: fixed;
+	top: 2.5rem;
+	right: 2.5rem;
+	color: #eeeeee;
+	font-size: 3rem;
+	cursor: pointer;
+	z-index: 1000;
+	display: none;
+}
+
+
+nav{
+	padding-top: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+}
+
+.brand{
+	font-size: 2.2rem;
+	font-weight: 300;
+	transform: translateX(-100rem);
+	animation: slideIn .5s forwards;
+}
+
+.brand span{
+	color:red;
+}
+
+nav ul{
+	display: flex;
+}
+
+nav ul li{
+	list-style: none;
+	transform: translateX(100rem);
+	animation: slideIn .5s forwards;
+}
+
+nav ul li:nth-child(1){
+	animation-delay: 0s;
+}
+
+nav ul li:nth-child(2){
+	animation-delay: .5s;
+}
+
+nav ul li:nth-child(3){
+	animation-delay: 1s;
+}
+
+nav ul li:nth-child(4){
+	animation-delay: 1.5s;
+}
+nav ul li:nth-child(5){
+	animation-delay: 2s;
+}
+
+nav ul li a{
+	padding: 1rem 0;
+	margin: 0 3rem;
+	position: relative;
+}
+
+nav ul li a:last-child{
+	margin-right: 0;
+}
+
+nav ul li a::before,
+nav ul li a::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: rgb(0, 0, 0);
+	left: 0;
+	transform: scaleX(0);
+	transition: all .5s;
+}
+
+nav ul li a::before{
+	top: 0;
+	transform-origin: left;
+}
+
+nav ul li a::after{
+	bottom: 0;
+	transform-origin: right;
+}
+
+.overlay{
+	background-color: rgba(0,0,0,.95);
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	transition: opacity 650ms;
+	transform: scale(0);
+	opacity: 0;
+  display: none;
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after{
+	transform: scaleX(1);
+}
+
+@keyframes slideIn {
+	from{
+
+	}
+	to{
+		transform: translateX(0);
+	}
+}
+
+@media screen and (max-width: 700px){
+
+	.menu-toggle{
+		display: block;
+	}
+
+	nav{
+		padding-top: 0;
+		display: none;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 100vh;
+		text-align: center;
+	}
+
+	nav ul{
+		flex-direction: column;
+	}
+
+	nav ul li{
+		margin-top: 5rem;
+	}
+
+	nav ul li a{
+		margin: 0;
+		font-size: 2.5rem;
+	}
+
+	.brand{
+		font-size: 5rem;
+	}
+  
+  .overlay.menu-open,
+  nav.menu-open{
+	  display: flex;
+	  transform: scale(1);
+	  opacity: 1;
   }
+  
 }
 
-.App-header {
-  background-color: #282c34;
+
+/*REGISTER */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+section
+{
+	position: relative;
+	min-height: 100vh;
+	background: #557085;
+	display: flex;
+	padding: 20px;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+}
+section
+{
+	background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)) ;
+}
+section .containerr
+{
+	position: relative;
+	width: 800px;
+	height: 500px;
+	background: #fff;
+	box-shadow: 0 15px 50px rgba(0,0,0,.1);
+	overflow: hidden;
+}
+section .containerr .user
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+section .containerr .user .imgBx
+{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	background: #ff0;
+	transition: 0.5s;
+}
+section .containerr .user .imgBx img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+section .containerr .user .formBx
+{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	transition: 0.5s;
+}
+section .containerr .user .formBx form h2
+{
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 10px;
+	color: #555;
+}
+section .containerr .user .formBx form input
+{
+	width: 100%;
+	padding: 10px;
+	background: #f5f5f5;
+	color: #333;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	font-size: 14px;
+	margin: 8px 0;
+	letter-spacing: 1px;
+	font-weight: 300;
+}
+section .containerr .user .formBx form input[type="submit"]
+{
+	max-width: 100px;
+	background: #677eff;
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	transition: 0.5s;
+}
+section .containerr.active .user .formBx form input[type="submit"]
+{
+	background: #e73e49;
+}
+section .containerr .user .formBx form .signup
+{
+	position: relative;
+	margin-top: 20px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	color: #555;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+section .containerr .user .formBx form .signup a
+{
+	font-weight: 600;
+	text-decoration: none;
+	color: #ff6767;
+}
+
+
+/* Contact CSS */ 
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+section
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  background: #095a55;
+}
+section::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+}
+.Container
+{
+  position: relative;
+  min-width: 1100px;
+  min-height: 550px;
+  display: flex;
+  z-index: 1000;
+}
+.Container .contactInfo
+{
+  position: absolute;
+  top: 40px;
+  width: 350px;
+  height: calc(100% - 80px);
+  background:url('backGround4.jpg');
+    z-index: 1;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+}
+.Container .contactInfo h2
+{
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+.Container .contactInfo ul.info
+{
+  position: relative;
+  margin: 20px 0;
+}
+.Container .contactInfo ul.info li
+{
+  position: relative;
+  list-style: none;
+  display: flex;
+  margin: 20px 0;
+  cursor: pointer;
+  align-items: flex-start;
+}
+.Container .contactInfo ul.info li span:nth-child(1)
+{
+  width: 30px;
+  min-width: 30px;
+}
+.Container .contactInfo ul.info li span img
+{
+  max-width: 100%;
+  filter: invert(1);
+}
+.Container .contactInfo ul.info li span:nth-child(2)
+{
+  color: #fff;
+  margin-left: 10px;
+  font-weight: 300;
+}
+.Container .contactInfo ul.sci
+{
+  position: relative;
+  display: flex;
+}
+.Container .contactInfo ul.sci li
+{
+  list-style: none;
+  margin-right: 15px;
+}
+.Container .contactInfo ul.sci li a
+{
+  list-style: none;
+}
+.Container .contactInfo ul.sci li a img
+{
+  filter: invert(1);
+}
+.Container .contactForm
+{
+  position: absolute;
+  padding: 70px 50px;
+  padding-left: 250px;
+  margin-left: 150px;
+  width: calc(100% - 150px);
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 50px 50px rgba(0,0,0,0.25);
+}
+.Container .contactForm h2
+{
+  color: #0f3959;
+  font-size: 24px;
+  font-weight: 500;
+}
+.Container .contactForm .formBox
+{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+.Container .contactForm .formBox .inputBox
+{
+  position: relative;
+  margin: 0 0 35px 0;
+}
+.Container .contactForm .formBox .inputBox.w50
+{
+  width: 47%;
+}
+.Container .contactForm .formBox .inputBox.w100
+{
+  width: 100%;
+}
+.Container .contactForm .formBox .inputBox input,
+.Container .contactForm .formBox .inputBox textarea
+{
+  width: 100%;
+  resize: none;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: #333;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #777;
+}
+.Container .contactForm .formBox .inputBox textarea
+{
+  min-height: 120px;
+}
+.Container .contactForm .formBox .inputBox span
+{
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  pointer-events: none;
+  font-size: 18px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+.Container .contactForm .formBox .inputBox input:focus ~ span,
+.Container .contactForm .formBox .inputBox input:valid ~ span,
+.Container .contactForm .formBox .inputBox textarea:focus ~ span,
+.Container .contactForm .formBox .inputBox textarea:valid ~ span
+{
+  transform: translateY(-20px);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #095a55;
+  font-weight: 500;
+}
+.Container .contactForm .formBox .inputBox input[type="submit"]
+{
+  position: relative;
+  cursor: pointer;
+  background: #095a55;
+  color: #fff;
+  border: none;
+  max-width: 150px;
+  padding: 12px;
+}
+.Container .contactForm .formBox .inputBox input[type="submit"]:hover
+{
+  background: #0d948b;
+}
+
+@media (max-width: 1200px)
+{
+  .Container
+  {
+    max-width: 90%;
+    min-width: auto;
+    margin: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  }
+  .Container .contactInfo
+  {
+    position: relative;
+    top: 0;
+    height: 550px;
+    box-shadow: none;
+  }
+  .Container .contactForm
+  {
+    position: relative;
+    width: calc(100% - 350px);
+    height: 550px;
+    padding-left: 0;
+    margin-left: 0;
+    padding: 40px;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 991px)
+{
+  section
+  {
+    background: #fff38e;
+  }
+  section::before
+  {
+    display: none;
+  }
+  .Container
+  {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .Container .contactInfo
+  {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+  }
+  .Container .contactInfo ul.sci
+  {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Container .contactForm
+  {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px)
+{
+  .Container .contactForm
+  {
+    height: auto;
+    padding: 25px;
+  }
+  .Container .contactForm .formBox .inputBox.w50
+  {
+    width: 100%;
+  }
+  .Container .contactInfo
+  {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+  }
+  .Container .contactInfo ul.sci
+  {
+    margin-top: 40px;
+  }
+}
+.home{
+	padding: 80px;
+	background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)),url('backGround4.jpg');
+	height: 600px;
+}
+.home h3{
+	font-size: 40px;
+	margin-left: 200px;
+}
+.home h4{
+	font-size: 34px;
+	margin-left: 200px;
+	padding: 10px;
+}
+.home h4 a{
+	font-size: 34px;
+	margin-left: 50px;
+color: #095a55;}
+/* HOME PAGE */
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+section
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: url('backGround4.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	padding: 50px;
+}
+.coontainer
+{
+	position: relative;
+	width: calc(100% - 100px);
+	min-height: calc(100vh - 280px);
+	background: rgba(255,255,255,0.5);
+	/*backdrop-filter: blur(20px);*/
+	border-radius: 20px;
+	box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+	display: flex;
+
+	border: 1px solid rgba(255,255,255,0.25);
+	border-top: 1px solid rgba(255,255,255,0.5);
+	border-left: 1px solid rgba(255,255,255,0.5);
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px;
+}
+.coontainer .content
+{
+	transform: translateX(-100px);
+	max-width: 700px;
+	background: rgba(255,255,255,0);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+	border: 1px solid rgba(255,255,255,0.25);
+	border-top: 1px solid rgba(255,255,255,0.5);
+	border-left: 1px solid rgba(255,255,255,0.5);
+	padding: 40px;
+	padding-left: 110px;
+	border-radius: 20px;
+}
+.coontainer .content h2
+{
+	font-size: 3em;
+}
+.coontainer .content p
+{
+	font-size: 1.2em;
+}
+
+.coontainer .content a
+{
+	display: inline-block;
+	padding: 15px 30px;
+	background: #fff;
+	margin-top: 20px;
+	border-radius: 30px;
+	font-size: 1.2em;
+	font-weight: 500;
+	text-decoration: none;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.coontainer .imageBx img
+{
+	max-width: 400px;
+	animation: animate 5s linear infinite;
+}
+@keyframes animate
+{
+	0%,100%
+	{
+		transform: translateY(0px);
+	}
+	50%
+	{
+		transform: translateY(47px);
+	}
+}
+.si
+{
+	position: absolute;
+	right: -25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.si li
+{
+	list-style: none;
+	transition: 0.5s;
+}
+.si li a
+{
+	text-decoration: none;
+	width: 50px;
+	height: 50px;
+	background: #fff;
+	border-radius: 50%;
+	margin: 5px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.si li a img
+{
+	transform: scale(0.6);
+	transition: 0.5s;
+}
+.si li:hover a img
+{
+	transform: scale(0.6) rotate(360deg);
+}
+.copyrightText
+{
+	position: absolute;
+	bottom: 30px;
+	left: 50px;
+	color: #8a2435;
+	padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.boxxx
+{
+  position: relative;
+  width: 320px;
+  height: 400px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: 40px 30px;
+  transition: 0.5s;
+}
+.boxxx:before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+}
+.boxxx:after
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  filter: blur(30px);
+  transition: 0.5s;
+}
+.boxxx:nth-child(3):before,
+.boxxx:nth-child(3):after
+{
+  transform: skewX(-15deg);
+}
+.boxxx:hover:before,
+.boxxx:hover:after
+{
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+}
+.boxxx:nth-child(1):before,
+.boxxx:nth-child(1):after
+{
+  background: linear-gradient(45deg,#ffbc00,#ff0058);
+}
+.boxxx:nth-child(2):before,
+.boxxx:nth-child(2):after
+{
+  background: linear-gradient(315deg,#03A9F4,#ff0058);
+}
+.boxxx:nth-child(3):before,
+.boxxx:nth-child(3):after
+{
+  background: linear-gradient(315deg,#4dff03,#00d0ff);
+}
+.boxxx span
+{
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 50;
+  pointer-events: none;
+}
+.boxxx span:before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate 2s linear infinite;
+}
+.boxxx:hover span:before
+{
+  top: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  opacity: 1;
+}
+.boxxx span:after
+{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate 2s linear infinite;
+  animation-delay: -1s;
+}
+.boxxx:hover span:after
+{
+  bottom: -50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  opacity: 1;
+}
+@keyframes animate
+{
+  0%,100%
+  {
+    transform: translateY(10px);
+  }
+  50%
+  {
+    transform: translateY(-10px);
+  }
+}
+.boxxx .contenttt
+{
+  position: relative;
+  left: 0;
+  z-index: 1;
+  padding: 20px 40px;
+  color: #333;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  transition: 0.5s;
+}
+  
+.boxxx:hover .contenttt
+{
+  left: -25px;
+  padding: 60px 40px;
+}
+.boxxx .contenttt h2
+{
+  font-size: 1.3em;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.boxxx .contenttt p
+{
+  font-size: 1.1em;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+  font-family: sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+
+.card-img-top{
+  height: 255px;
+}
+.card-img-top-accent{
+  margin: auto;
+  width: 350px;
+}
+.card-img-top-i30{  
+  margin: auto;
+  width: 470px;
+}
+.card-img-top-logan{
+  margin: auto;
+  width: 395px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-brand{
+  background-color: transparent;
+  background: transparent;
 }
+
+
