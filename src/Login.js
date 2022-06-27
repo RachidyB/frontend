@@ -68,8 +68,9 @@ const handleSubmit = (evt) => {
                 
             }
             }).catch((error) =>{
-            console.log('Axios signup error :', error );
-            
+                setFormData({
+                    ...formData, errorMsg: 'Email or Password is incorrect' ,
+                })             
         }
         );
         
